@@ -25,9 +25,11 @@ app.use(cors({
 
 
 // importing and using routes 
-import user from "./routes/userRoute.js";
+import user from "./routes/userRoutes.js";
+import blog from "./routes/blogRoutes.js";
 
 app.use('/api/v1', user);
+app.use('/api/v1', blog);
 
 app.get('/', (req, res) => {
     res.send('<h1>Server Is Working</h1>');

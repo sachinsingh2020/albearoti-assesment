@@ -23,6 +23,7 @@ export const createBlog = catchAsyncError(async (req, res, next) => {
 
     const mycloud = await cloudinary.v2.uploader.upload(fileUri.content);
 
+
     const blog = await Blog.create({
         blogTitle,
         blogContent,
