@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
 export const register = catchAsyncError(async (req, res, next) => {
     const { firstName, lastName, email, password } = req.body;
 
-
+    console.log({ firstName, lastName, email, password });
     if (!firstName || !lastName || !email || !password) {
         return next(new ErrorHandler('All fields are required', 400));
     }
@@ -32,6 +32,8 @@ export const register = catchAsyncError(async (req, res, next) => {
 
 export const login = catchAsyncError(async (req, res, next) => {
     const { email, password } = req.body;
+
+    // console.log({ email, password });
 
     if (!email || !password) {
         return next(new ErrorHandler("Please enter all fields", 400));

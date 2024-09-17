@@ -36,7 +36,6 @@ export const createBlog = catchAsyncError(async (req, res, next) => {
 
     res.status(201).json({
         success: true,
-        blog,
         message: "Blog created successfully",
     });
 });
